@@ -11,8 +11,9 @@ namespace BoxField
     class box
     {
         public SolidBrush bBrush;
+        
 
-       public int x, y;
+        public int x, y;
        public int size;
 
         public box(int _x, int _y, int _size)

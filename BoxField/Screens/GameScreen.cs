@@ -16,12 +16,21 @@ namespace BoxField
         Boolean leftArrowDown, rightArrowDown;
 
         //used to draw boxes on screen
-        SolidBrush boxBrush = new SolidBrush(Color.Purple);
+        SolidBrush boxBrush = new SolidBrush(Color.PaleGoldenrod);
+
+        SolidBrush red = new SolidBrush(Color.Red);
+        SolidBrush blue = new SolidBrush(Color.Blue);
+
+        SolidBrush green = new SolidBrush(Color.Green);
+        SolidBrush orange = new SolidBrush(Color.Orange);
+        SolidBrush purple = new SolidBrush(Color.Purple);
 
         //box left list
         List<box> leftBoxes = new List<box>();
 
          int counter;
+
+        Random ranGen = new Random();
 
         box Hero;
 
@@ -37,10 +46,12 @@ namespace BoxField
         public void OnStart()
         {
             //TODO - set game start values
-            box b = new box(4, 36, 10);
+            box b = new box(red,4, 36, 10);
             leftBoxes.Add(b);
+            
 
-            Hero = new box(50, 100, 16);
+
+            Hero = new box(this.Width/2 -8, this.Height - 20, 16);
         }
 
         private void GameScreen_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -90,21 +101,71 @@ namespace BoxField
 
 
             //TODO - add new box if it is time
+
+            
             counter++;
-            if(counter == 5)
+            if(counter == 1)
             {
-                box box = new box(4, 36, 10);
-                leftBoxes.Add(box);
                 counter = 0;
+                int rand2 = ranGen.Next(1, 6);
+
+                if (rand2 == 1)
+                {
+                    int rando = ranGen.Next(-1000, 2000);
+                    box box = new box(red, rando, 0, 10);
+                    leftBoxes.Add(box);
+                    
+                }
+                else if (rand2 == 2)
+                {
+                    int rando = ranGen.Next(-1000, 2000);
+                    box box = new box(blue, rando, 0, 10);
+                    leftBoxes.Add(box);
+
+                }
+                else if (rand2 == 3)
+                {
+                    int rando = ranGen.Next(-1000, 2000);
+                    box box = new box(orange , rando, 0, 10);
+                    leftBoxes.Add(box);
+
+                }
+                else if (rand2 == 4)
+                {
+                    int rando = ranGen.Next(-1000, 2000);
+                    box box = new box(green, rando, 0, 10);
+                    leftBoxes.Add(box);
+
+                }
+                else if (rand2 == 5)
+                {
+                    int rando = ranGen.Next(-1000, 2000);
+                    box box = new box(purple, rando, 0, 10);
+                    leftBoxes.Add(box);
+
+                }
+
+
             }
 
             if(leftArrowDown)
             {
-                Hero.Move("left");
+               // Hero.Move("left");
+                foreach (box b in leftBoxes)
+                {
+                    b.Move("right");
+
+                }
+
             }
             if (rightArrowDown)
             {
-                Hero.Move("right");
+                //Hero.Move("right");
+                foreach (box b in leftBoxes)
+                {
+                    b.Move("left");
+
+                }
             }
             Refresh();
         }
@@ -119,7 +180,7 @@ namespace BoxField
             foreach (box b in leftBoxes)
             {
 
-                e.Graphics.FillRectangle(boxBrush, b.x, b.y, b.size, b.size);
+                e.Graphics.FillRectangle(b.bBrush, b.x, b.y, b.size, b.size);
             }
 
             e.Graphics.FillRectangle(boxBrush, Hero.x, Hero.y, Hero.size, Hero.size);

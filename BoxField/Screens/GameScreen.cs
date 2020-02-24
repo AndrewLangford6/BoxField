@@ -285,6 +285,21 @@ namespace BoxField
         List<box> boxesLeft = new List<box>();
         List<box> boxesRight = new List<box>();
 
+        SolidBrush red = new SolidBrush(Color.Red);
+        SolidBrush blue = new SolidBrush(Color.Blue);
+
+        SolidBrush green = new SolidBrush(Color.Green);
+        SolidBrush orange = new SolidBrush(Color.Orange);
+        SolidBrush purple = new SolidBrush(Color.Purple);
+
+        //box left list
+        List<box> leftBoxes = new List<box>();
+
+        List<box> rightBoxes = new List<box>();
+
+        int counter1;
+        int counter2;
+
         int boxSize = 20;
         int boxLeftX = 100;
         int boxGap = 200;

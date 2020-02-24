@@ -57,7 +57,7 @@ namespace BoxField
 
 
 
-            Hero = new box(this.Width/2 -8, this.Height - 20, 16);
+            Hero = new box(this.Width/2, this.Height/2, 16);
         }
 
         private void GameScreen_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -128,35 +128,35 @@ namespace BoxField
                 if (rand2 == 1)
                 {
                     int rando = ranGen.Next(-1000, 2000);
-                    box box = new box(red, rando, 0, 10);
+                    box box = new box(red, this.Width / 2 - 10, this.Height / 2, 10);
                     leftBoxes.Add(box);
                     
                 }
                 else if (rand2 == 2)
                 {
                     int rando = ranGen.Next(-1000, 2000);
-                    box box = new box(blue, rando, 0, 10);
+                    box box = new box(blue, this.Width / 2 - 10, this.Height / 2, 10);
                     leftBoxes.Add(box);
 
                 }
                 else if (rand2 == 3)
                 {
                     int rando = ranGen.Next(-1000, 2000);
-                    box box = new box(orange , rando, 0, 10);
+                    box box = new box(orange , this.Width / 2 - 10, this.Height / 2, 10);
                     leftBoxes.Add(box);
 
                 }
                 else if (rand2 == 4)
                 {
                     int rando = ranGen.Next(-1000, 2000);
-                    box box = new box(green, rando, 0, 10);
+                    box box = new box(green, this.Width / 2 - 10, this.Height / 2, 10);
                     leftBoxes.Add(box);
 
                 }
                 else if (rand2 == 5)
                 {
                     int rando = ranGen.Next(-1000, 2000);
-                    box box = new box(purple, rando, 0, 10);
+                    box box = new box(purple, this.Width / 2 - 10, this.Height / 2, 10);
                     leftBoxes.Add(box);
 
                 }
@@ -173,35 +173,35 @@ namespace BoxField
                 if (rand2 == 1)
                 {
                     int rando = ranGen.Next(-1000, 2000);
-                    box rbox = new box(red, rando, 0, 10);
+                    box rbox = new box(red, this.Width / 2 + 10, this.Height / 2, 10);
                     rightBoxes.Add(rbox);
 
                 }
                 else if (rand2 == 2)
                 {
                     int rando = ranGen.Next(-1000, 2000);
-                    box rbox = new box(blue, rando, 0, 10);
+                    box rbox = new box(blue, this.Width / 2 + 10, this.Height / 2, 10);
                     rightBoxes.Add(rbox);
 
                 }
                 else if (rand2 == 3)
                 {
                     int rando = ranGen.Next(-1000, 2000);
-                    box rbox = new box(orange, rando, 0, 10);
+                    box rbox = new box(orange, this.Width / 2 + 10, this.Height / 2, 10);
                     rightBoxes.Add(rbox);
 
                 }
                 else if (rand2 == 4)
                 {
                     int rando = ranGen.Next(-1000, 2000);
-                    box rbox = new box(green, rando, 0, 10);
+                    box rbox = new box(green, this.Width / 2 + 10, this.Height / 2, 10);
                     rightBoxes.Add(rbox);
 
                 }
                 else if (rand2 == 5)
                 {
                     int rando = ranGen.Next(-1000, 2000);
-                    box rbox = new box(purple, rando, 0, 10);
+                    box rbox = new box(purple, this.Width/2 + 10, this.Height / 2, 10);
                     rightBoxes.Add(rbox);
 
                 }
